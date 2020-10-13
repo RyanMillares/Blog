@@ -75,3 +75,13 @@ From here, you can provide an input, and it will parse the input through the alg
 main> 5
 5
 ```
+
+## Lists in Haskell
+[]
+Represents an empty list, and a list with an item in it (1) can be written as:
+1:[]
+
+Items with multiple items can be written in this fashion as:
+3:(2:(1:[]))
+
+To separate the list into its individual elements, you can use head() and tail() on the list, which would return the newest and oldest items in the list respectively. 
