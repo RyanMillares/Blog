@@ -16,7 +16,7 @@ add :: int -> int -> int
 
 (x + (mult y z))
 
-* Assuming mult is defined as
+* Assuming mult is declared as
 ```
 mult :: int -> int -> int
 ```
@@ -37,3 +37,4 @@ We can see this done by creating a tree diagram to visualize this process:
                 |     |
                 y     z
 ```
+This diagram proves us a visual for how a parser would read a line of operations and know which to run first. It first sees the operation 'add' and knows it takes two inputs, so it reads the next to terms as inputs. The first is a variable x, but the second is another operation 'mult' that returns an int and takes two int inputs. It then reads the NEXT two terms as input to the 'mult' operation and then subsitutes the resulting output as the second term for the 'add' operation.
