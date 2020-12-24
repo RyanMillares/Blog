@@ -24,6 +24,22 @@ This algorithm uses recursion because it requires calling itself to compute the 
        **= 24**<br/>
 *fact(4) = 4 x 3 x 2 x 1 x 1* ( = 24 )
 
+For the entirety of this blog, we will be implementing functions using the programming language Haskell, which is a functional programming language. A few basic notes before starting:
+* Haskell files will appear using the file extension of ".hs", such as numbers.hs. These would be directly compiled by Haskell.
+* To compile a Haskell file, first run:
+```
+> ghci
+```
+in your terminal, then run:
+```
+> :l myFile.hs
+```
+* This will attempt to compile and load the specified Haskell file. If successful, your terminal will appear like:
+```
+*Main>
+```
+* This means your file has been compiled and loaded, and is now awaiting input. To exit ghci, you hit ctrl + d on your keyboard.
+
 In order to write this algorithm in Haskell, we must follow a few rules for recursion:
 
 * First, to define the function 'fib', we need to indicate the input and output types. We know it takes an int (number we are calculating factorial for) and returns an int (calculated value), so we write our function definition as so:

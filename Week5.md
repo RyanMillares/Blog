@@ -45,6 +45,11 @@ This is a great example of how crucial it is to properly use parenthesis in Hask
 * i2n is defined as type int -> NN. While as an operation it takes input and returns one NN, trying to pass the function itself as input would result in detecting the function definition as its data type, and this fails because it reads the type as 'int -> NN' when it's looking for a NN input, resulting in a type mismatch error.
 * Because our i2n is now cut off from its input (n-1), it no longer has any input, and thus results in a 'too few arguments' error.
 
+To fix our code, we would have to change the second case to read as:
+```
+i2n n = S (i2n (n-1))
+```
+
 ## Declaring using wrong type
 * Let us assume we now write a function to convert natural numbers to integers
 ```
