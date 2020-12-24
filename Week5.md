@@ -12,7 +12,7 @@ When we break down the function definition, we get:
 * if the input is 0, return O
 * if the input is any non-negative int, return the Succesor of the int2nn return of the int value 1 less than the input.
 
-These rules should help procedurely convert an int such as 3 to a natural number like S(S(S(O))).
+These rules should help procedurally convert an int such as 3 to a natural number like S(S(S(O))).
 However, if we compile this function (assuming we already defined NN previously, we will get an error:
 
 * No instance for (Num NN) arising from a use of '-'
@@ -67,7 +67,7 @@ nn2int O = 0
 
 The simple solution to this would be to change "int" to "Int" and the compiler will be able to find the instance of "0" in the Int datatype and properly load the file.
 
-## Non-exhaustive patterns in case
+## Non-exhaustive patterns
 * When writing functions in Haskell, it is important to make sure you write cases for all possible inputs to your function. Assume we want to make a function that will tell us if an inputted NN value is even or odd without using modulo.
 ```
 -- make sure to capitalize the B in Bool as using "bool" would give the error mentioned in our previous point.
@@ -85,6 +85,7 @@ isEven (S (S O)) = isEven n
 ```
 If we compile this, we will get no errors, but upon testing it we will find our program seems to work half the time. Inputting even numbers will yield True, and odd numbers will yield an error:
 *  Non-exhaustive patterns in function isEven
+
 This is because our function fails to cover what happens when isEven is called on (S O), the successor of zero. If isEven called on an odd number, it will move down the successors two at a time until eventually hitting (S O), but we do not have a case for this, hence the error. The way to solve this is to add a case to handle isEven (S O), to state that isEven is False should this case be reached:
 ```
 data NN = O | S NN
